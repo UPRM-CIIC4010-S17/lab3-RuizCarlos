@@ -7,5 +7,6 @@ public class Lab3Exercises {
 		myFrame.setLocation(550, 300);
 		myFrame.setSize(200, 200);
 		myFrame.setVisible(true);
+		//Same as the previous commit but with the push
 	}
 }
