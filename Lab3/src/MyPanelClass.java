@@ -22,16 +22,33 @@ public class MyPanelClass extends JPanel {
                         int y2 = getHeight() - myInsets.bottom - 1;
                         int width = x2 - x1;
                         int height = y2 - y1;
+                        int heightStripes = height/5;
  
                         //Paint the background
-                        g.setColor(Color.BLACK);
+                        g.setColor(Color.RED);
                         g.fillRect(x1, y1, width+1, height+1);
-//                      //Draw a border
-//                        g.setColor(Color.WHITE);
-//                        g.drawRect(x1, y1, width+1, height+1);
-//                      //Draw a second border
-//                        g.setColor(Color.RED);
-//                        g.drawRect(x1+3, y1+3, width-5, height-5);
+                      //Draw first white frame
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, y1+heightStripes, width, heightStripes);
+                      //Draw first white frame
+                        g.setColor(Color.WHITE);
+                        g.fillRect(x1, y1+(heightStripes*3), width, heightStripes);  
+                      //Draw a trianlge
+                        Polygon triangle = new Polygon();
+                        triangle.addPoint(x1+1, y1+1);
+                        triangle.addPoint(x1+133, height/2);
+                        triangle.addPoint(x1+1, y2);
+                        g.setColor(Color.BLUE);
+                        g.fillPolygon(triangle);
+                        //Draw a border
+                        g.setColor(Color.BLACK);
+                        g.drawRect(x1, y1, width+1, height+1);
+                      //Draw a second border
+                        g.setColor(Color.BLACK);
+                        g.drawRect(x1+1, y1+1, width-1, height-1);
+                      //Draw a third border
+                        g.setColor(Color.BLACK);
+                        g.drawRect(x1+2, y1+2, width-2, height-2);
 //                       //Draw Lines
 //                        g.setColor(Color.ORANGE);
 //                        g.drawLine(x1, y1, x2, y2);
@@ -62,6 +79,6 @@ public class MyPanelClass extends JPanel {
                         p2.addPoint(x1 + 34, y1 + 98);
                         p2.addPoint(x1 + 38, y1 + 83);
                         g.setColor(Color.WHITE);
-                        g.drawPolygon(p2);
+                        g.fillPolygon(p2);
             }
 }
